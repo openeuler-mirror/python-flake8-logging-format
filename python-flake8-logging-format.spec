@@ -1,7 +1,7 @@
 %global _empty_manifest_terminate_build 0
 Name:           python-flake8-logging-format
 Version:        0.6.0
-Release:        1
+Release:        2
 Summary:        Flake8 extension to validate (lack of) logging format strings
 License:        Apache License 2.0
 URL:            https://github.com/globality-corp/flake8-logging-format
@@ -20,7 +20,7 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr
 BuildRequires:  python3-pip
 BuildRequires:  python3-wheel
-BuildRequires:  python3-nose
+BuildRequires:  python3-nose2
 %description -n python3-flake8-logging-format
 Flake8 extension to validate (lack of) logging format strings
 
@@ -33,7 +33,7 @@ Flake8 extension to validate (lack of) logging format strings
 
 
 %prep
-%autosetup -n flake8-logging-format-0.6.0
+%autosetup -n flake8-logging-format-0.6.0 -p1
 
 %build
 %py3_build
@@ -75,5 +75,8 @@ mv %{buildroot}/doclist.lst .
 %{_docdir}/*
 
 %changelog
+* Tue May 17 2022 lvxiaoqian <xiaoqian@nj.iscas.ac.cn> - 0.6.0-2
+- replace nose with nose2
+
 * Mon Aug 09 2021 OpenStack_SIG <openstack@openeuler.org> - 0.6.0-1
 - Package Spec generate
